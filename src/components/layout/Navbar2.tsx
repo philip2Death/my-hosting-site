@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useActionState } from 'react'
 import { usePathname } from 'next/navigation'
-export default function Navbar() {
+export default function Navbar2() {
   // 修改: 使用 useActionState 來管理 isMenuOpen 狀態
   const [isMenuOpen, toggleMenu, isPending] = useActionState(
     async (previousState) => {

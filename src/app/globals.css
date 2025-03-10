@@ -17,30 +17,31 @@
     border-color: var(--color-gray-200, currentColor);
   }
   :root {
-    --nav-bg: 20% 0.02 0;  /* OKLCH 格式 */
-    --nav-text: 0.95 0 0; /* 灰階 */
+    --nav-bg: 20% 0.02 0;  /* 淺色模式背景 */
+    --nav-text: 0.95 0 0; /* 淺色模式文字灰階 */
     --nav-hover: 0.75 0.03 260; /* 藍紫色*/
   }
 
   .dark {
-    --nav-bg: 15% 0.01 0;
-    --nav-text: 0.98 0 0;
+    --nav-bg: 15% 0.01 0; /* 深色模式背景 */
+    --nav-text: 0.98 0 0; /* 深色模式文字 */
   }
 }
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --nav-bg: 20% 0.02 0;
-  --nav-text: 0.95 0 0;
+  --nav-bg: 20% 0.02 0; /* 淺色模式背景 */
+  --nav-text: 0.95 0 0; /* 淺色模式文字 */
+  --nav-text-hover: 0.75 0.03 260; /* 替代透明度方案 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --nav-bg: 20% 0.02 0;
-    --nav-text: 0.95 0 0;
+    --nav-bg: 20% 0.02 0; /* 深色模式背景 */
+    --nav-text: 0.95 0 0; /* 深色模式文字 */
   }
 }
 
@@ -49,6 +50,16 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* 在globals.css添加 */
+@supports (color: oklch(0 0 0)) {
+  :root {
+    --nav-bg: 0.964 0.008 274; /* L C H 值 */
+    --nav-text: 0.25 0.1 274;
+    --nav-text-hover: 0.45 0.15 274;
+    --ease-productive: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+}
+
 @theme {
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;

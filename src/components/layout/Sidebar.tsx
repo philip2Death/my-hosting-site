@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-gray-900 text-white p-4">
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="@container/navbar mx-auto flex items-center justify-between w-full max-w-[1440px]">
         <Link href="/" className="text-xl font-bold">
           IT Hosting Pro
         </Link>
